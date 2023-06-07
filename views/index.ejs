@@ -1,0 +1,68 @@
+<!-- include header -->
+ <%-include('include/_header')%>
+
+<!-- include header -->
+
+  <!--  MAIN site-->
+  
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+
+                <a href="/add-user" class="border-shadow">
+                    <span class="text-gradient">New user <i class="fa-sharp fa-solid fa-user"></i></span>
+                </a>
+            </div>
+        <!-- Form handling -->
+
+        <form action="/" method="GET">
+            <% console.log(users); %>
+            <table class="table" >
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>@Email</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(function(user,index) { %>
+                        <tr>
+                            <td><%= index+1 %></td>
+                          <td><%= user.name %></td>
+                          <td><%= user.email %></td>
+                          <td><%= user.gender %></td>
+                          <td><%= user.status %></td>
+                          <!-- Display more properties of the user object -->
+                          <td>
+                            <a href="/update-user" class="btn border-shadow update">
+                                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                            </a>
+                            <a href="#" class="btn border-shadow delete">
+                                <span class="text-gradient"><i class="fas fa-times"></i></span>
+                            </a>
+                        </td>
+                        </tr>
+                        <% }); %>
+                   
+                    
+                </tbody>
+
+            </table>
+        </form>
+        <!-- <%= users%> -->
+        <!-- Form handling -->
+    </div>
+    </main>
+    <!--  MAIN site-->
+
+
+
+
+<!-- include footer -->
+ <%-include('include/_footer')%>
+
+<!-- include footer -->
